@@ -12,5 +12,6 @@ server_conn = mysql.connector.connect(**server_config)
 server_cursor = server_conn.cursor()
 
 # Step 2: Create the Database
-create_database_query = f"CREATE DATABASE IF NOT EXISTS `CarBookingSystem`"
+db_name = os.getenv("DB_NAME")
+create_database_query = f"CREATE DATABASE IF NOT EXISTS `CarBookingDb`"
 server_cursor.execute(create_database_query)
